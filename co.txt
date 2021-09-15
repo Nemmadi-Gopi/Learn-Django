@@ -1,0 +1,237 @@
+
+one to one model:
+
+>>> from employee.models import BookModel
+>>> b1 = BookModel()
+>>> b1.B_name = 'EDC'
+>>> b1.B_author = 'U.A Bakshi'
+>>> b1.publisher = 'Techinical publisher'
+>>> b1.pages = 550
+>>> b1.price = 200.25
+>>> from datetime import date
+>>> b1.pubdate(datetime(2020,7,10))
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'datetime' is not defined
+
+from employee.models import BookModel
+
+b2 = BookModel(author =a1 , B_name = 'OC', B_author = 'Wiley', pages = 650, price = 500.50, pubdate = '2020-7-11')
+b3 = BookModel(B_name = 'ECA', B_author = 'bakshi', publisher = 'S.2. Publications', pages = 650, price = 500.50, pubdate = '2020-7-22')
+b4 = BookModel(B_name = 'DC', B_author = 'john wiley', publisher = 'S.3. Publications', pages = 650, price = 500.50, pubdate = '2020-7-30')
+b5 = BookModel(B_name = 'AWS', B_author = 'chittod', publisher = 'S.4. Publications', pages = 650, price = 500.50, pubdate = '2020-7-25')
+b6 = BookModel(B_name = 'SS', B_author = 'ramesh power', publisher = 'S.5. Publications', pages = 650, price = 500.50, pubdate = '2020-7-13')
+b7 = BookModel(B_name = 'EMWTL', B_author = 'bakshi', publisher = 'S.6. Publications', pages = 650, price = 500.50, pubdate = '2020-7-01')
+b8 = BookModel(B_name = 'IT', B_author = 'raju', publisher = 'S.7. Publications', pages = 650, price = 500.50, pubdate = '2020-7-18')
+
+a2 = AuthorModel(name = 'U. Bakshi', email = 'u.bakshi@gmail.com', st_date = '1994-7-11')
+a2.save()
+a3 = AuthorModel(name = 'ramesh power', email = 'rameshpower1@gmail.com', st_date = '1990-8-11')
+a3.save()
+a4 = AuthorModel(name = 'power', email = 'power1@gmail.com', st_date = '2009-8-11')
+a4.save()
+a5 = AuthorModel(name = 'A.P.Godse', email = 'a.p.godse@gmail.com', st_date = '2010-8-11')
+a5.save()
+
+Many to One:
+
+b1 = BookModel(B_name = 'OC', pages = 650, price = 500.50, release_date = '2020-7-11', author = a1)
+
+b2 = BookModel(author = a2, B_name = 'ECA', pages = 350, price = 500.50, release_date = '1994-8-11')
+b3 = BookModel(B_name = 'Dc', pages = 650, price = 450.50, release_date = '2010-7-11', author = a3)
+b4 = BookModel(B_name = 'IC', pages = 650, price = 600.50, release_date = '2012-7-11', author = a4)
+b5 = BookModel(B_name = 'LICA', pages = 650, price = 1000.50, release_date = '2016-7-11', author = a5)
+
+
+Many to Many:
+p3 = publishermodel(name = 'shalini publisher', address = 'chennai1', pub_date = '1994-08-14')
+p4 = publishermodel(name = 'Pooja publisher', address = 'Delhi', pub_date = '1997-08-14')
+p5 = publishermodel(name = 'shanu publisher', address = 'Pune', pub_date = '2018-08-14')
+
+
+
+
+
+
+
+Compalication code:
+
+Microsoft Windows [Version 10.0.19042.1202]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\nemma>cd Desktop
+
+C:\Users\nemma\Desktop>cd virtualenvironment
+
+C:\Users\nemma\Desktop\virtualenvironment>cd Django_2.0.7_to_3.2.7
+
+C:\Users\nemma\Desktop\virtualenvironment\Django_2.0.7_to_3.2.7>cd Scripts
+
+C:\Users\nemma\Desktop\virtualenvironment\Django_2.0.7_to_3.2.7\Scripts>activate
+
+(virtualenvironment) C:\Users\nemma\Desktop\virtualenvironment\Django_2.0.7_to_3.2.7\Scripts>cd..
+
+(virtualenvironment) C:\Users\nemma\Desktop\virtualenvironment\Django_2.0.7_to_3.2.7>cd..
+
+(virtualenvironment) C:\Users\nemma\Desktop\virtualenvironment>cd..
+
+(virtualenvironment) C:\Users\nemma\Desktop>cd Learn-Django
+
+(virtualenvironment) C:\Users\nemma\Desktop\Learn-Django>cd project-1
+
+(virtualenvironment) C:\Users\nemma\Desktop\Learn-Django\project-1>cd employeer
+
+(virtualenvironment) C:\Users\nemma\Desktop\Learn-Django\project-1\employeer>python manage.py shell
+Python 3.6.5 (v3.6.5:f59c0932b4, Mar 28 2018, 17:00:18) [MSC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from employee.models import AuthorModel
+>>> a1 = AuthorModel()
+>>> from datetime import date
+>>> a1.name = 'U.A Bakshi'
+>>> a1.email = 'u.a.bakshi@gmail.com'
+>>> a1.st_date = '2020-7-11'
+>>> a1.save()
+>>> AuthorModel.objects.all()
+<QuerySet [<AuthorModel: U.A Bakshi>]>
+>>> a2 = AuthorModel(name = 'U. Bakshi', email = 'u.bakshi@gmail.com', st_date = '1994-7-11')
+>>> a2.save()
+>>> a3 = AuthorModel(name = 'ramesh power', email = 'rameshpower1@gmail.com', st_date = '1990-8-11')
+>>> a3.save()
+>>> a4 = AuthorModel(name = 'power', email = 'power1@gmail.com', st_date = '2009-8-11')
+>>> a4.save()
+>>> a5 = AuthorModel(name = 'A.P.Godse', email = 'a.p.godse@gmail.com', st_date = '2010-8-11')
+>>> a5.save()
+>>> AuthorModel.objects.all()
+<QuerySet [<AuthorModel: U.A Bakshi>, <AuthorModel: U. Bakshi>, <AuthorModel: ramesh power>, <AuthorModel: power>, <AuthorModel: A.P.Godse>]>
+>>> from employee.models import BookModel
+>>> b1 = BookModel()
+>>> b2 = BookModel(B_name = 'OC', pages = 650, price = 500.50, release_date = '2020-7-11')
+>>> b1 = BookModel(B_name = 'OC', pages = 650, price = 500.50, release_date = '2020-7-11')
+>>> b1.author.add(a1)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\nemma\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\fields\related_descriptors.py", line 189, in __get__
+    "%s has no %s." % (self.field.model.__name__, self.field.name)
+employee.models.BookModel.author.RelatedObjectDoesNotExist: BookModel has no author.
+>>> b1.author.add(a1)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\nemma\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\fields\related_descriptors.py", line 189, in __get__
+    "%s has no %s." % (self.field.model.__name__, self.field.name)
+employee.models.BookModel.author.RelatedObjectDoesNotExist: BookModel has no author.
+>>> b2 = BookModel((author = a1),B_name = 'OC', pages = 650, price = 500.50, release_date = '2020-7-11')
+  File "<console>", line 1
+    b2 = BookModel((author = a1),B_name = 'OC', pages = 650, price = 500.50, release_date = '2020-7-11')
+                           ^
+SyntaxError: invalid syntax
+>>> b1 = BookModel(B_name = 'OC', pages = 650, price = 500.50, release_date = '2020-7-11', author = a1)
+>>> b1.save()
+>>> b1
+<BookModel: OC>
+>>> BookModel.objects.all()
+<QuerySet [<BookModel: OC>]>
+>>> b2 = BookModel(author = a2, B_name = 'ECA', pages = 350, price = 500.50, release_date = '1994-8-11')
+>>> b2.save()
+>>> b3 = BookModel(B_name = 'Dc', pages = 650, price = 450.50, release_date = '2010-7-11', author = a3)
+>>> b3.save()
+>>> b4 = BookModel(B_name = 'IC', pages = 650, price = 600.50, release_date = '2012-7-11', author = a4)
+>>> b4.save()
+>>> b5 = BookModel(B_name = 'LICA', pages = 650, price = 1000.50, release_date = '2016-7-11', author = a5)
+>>> b5.save()
+>>> BookModel.objects.all()
+<QuerySet [<BookModel: OC>, <BookModel: ECA>, <BookModel: Dc>, <BookModel: IC>, <BookModel: LICA>]>
+>>> from employee.models import publishermodel
+>>> p1 = publishermodel()
+>>> pl.author = a1
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'pl' is not defined
+>>> p1.author = a1
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\nemma\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\fields\related_descriptors.py", line 538, in __set__
+    % self._get_set_deprecation_msg_params(),
+TypeError: Direct assignment to the forward side of a many-to-many set is prohibited. Use author.set() instead.
+>>> p1 = publishermodel(author = a1, name = 'Techinical publisher', address = 'Hyderabad', pub_date = '2021-08-14')
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\nemma\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 496, in __init__
+    _setattr(self, prop, kwargs[prop])
+  File "C:\Users\nemma\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\fields\related_descriptors.py", line 538, in __set__
+    % self._get_set_deprecation_msg_params(),
+TypeError: Direct assignment to the forward side of a many-to-many set is prohibited. Use author.set() instead.
+>>> p1 = publishermodel((author = a1), name = 'Techinical publisher', address = 'Hyderabad', pub_date = '2021-08-14')
+  File "<console>", line 1
+    p1 = publishermodel((author = a1), name = 'Techinical publisher', address = 'Hyderabad', pub_date = '2021-08-14')
+                                ^
+SyntaxError: invalid syntax
+>>> p1 = publishermodel(name = 'Techinical publisher', address = 'Hyderabad', pub_date = '2021-08-14')
+>>> p1.author.set(a1)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\nemma\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\fields\related_descriptors.py", line 527, in __get__
+    return self.related_manager_cls(instance)
+  File "C:\Users\nemma\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\fields\related_descriptors.py", line 840, in __init__
+    (instance, self.pk_field_names[self.source_field_name]))
+ValueError: "<publishermodel: Techinical publisher>" needs to have a value for field "id" before this many-to-many relationship can be used.
+>>> p1.author.add(a1)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\nemma\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\fields\related_descriptors.py", line 527, in __get__
+    return self.related_manager_cls(instance)
+  File "C:\Users\nemma\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\fields\related_descriptors.py", line 840, in __init__
+    (instance, self.pk_field_names[self.source_field_name]))
+ValueError: "<publishermodel: Techinical publisher>" needs to have a value for field "id" before this many-to-many relationship can be used.
+>>> p1
+<publishermodel: Techinical publisher>
+>>> p1.author.add(a1)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\nemma\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\fields\related_descriptors.py", line 527, in __get__
+    return self.related_manager_cls(instance)
+  File "C:\Users\nemma\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\fields\related_descriptors.py", line 840, in __init__
+    (instance, self.pk_field_names[self.source_field_name]))
+ValueError: "<publishermodel: Techinical publisher>" needs to have a value for field "id" before this many-to-many relationship can be used.
+>>> p1.author.add(a1)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\nemma\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\fields\related_descriptors.py", line 527, in __get__
+    return self.related_manager_cls(instance)
+  File "C:\Users\nemma\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\fields\related_descriptors.py", line 840, in __init__
+    (instance, self.pk_field_names[self.source_field_name]))
+ValueError: "<publishermodel: Techinical publisher>" needs to have a value for field "id" before this many-to-many relationship can be used.
+>>> p1.author.add(a2)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\nemma\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\fields\related_descriptors.py", line 527, in __get__
+    return self.related_manager_cls(instance)
+  File "C:\Users\nemma\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\fields\related_descriptors.py", line 840, in __init__
+    (instance, self.pk_field_names[self.source_field_name]))
+ValueError: "<publishermodel: Techinical publisher>" needs to have a value for field "id" before this many-to-many relationship can be used.
+>>> p1.author.set(a1)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\nemma\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\fields\related_descriptors.py", line 527, in __get__
+    return self.related_manager_cls(instance)
+  File "C:\Users\nemma\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\fields\related_descriptors.py", line 840, in __init__
+    (instance, self.pk_field_names[self.source_field_name]))
+ValueError: "<publishermodel: Techinical publisher>" needs to have a value for field "id" before this many-to-many relationship can be used.
+>>> p1.save()
+>>> p1.author.add(a1)
+>>> p1
+<publishermodel: Techinical publisher>
+>>> p2 = publishermodel(name = 'sukumar publisher', address = 'chennai', pub_date = '1995-08-14')
+>>> p2.save()
+>>> p1.author.add(a1, a2)
+>>> p2.author.add(a1, a2, a3)
+>>> p3 = publishermodel(name = 'shalini publisher', address = 'chennai1', pub_date = '1994-08-14')
+>>> p3.save()
+>>> p3.author.add(a1, a4, a3)
+>>> p4 = publishermodel(name = 'Pooja publisher', address = 'Delhi', pub_date = '1997-08-14')
+>>> p4.save()
+>>> p4.author.add(a1, a2, a4, a3)
+>>> p5 = publishermodel(name = 'shanu publisher', address = 'Pune', pub_date = '2018-08-14')
+>>> p5.save()
+>>> p5.author.add(a1, a2, a5)
+>>>

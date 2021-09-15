@@ -1,0 +1,47 @@
+Microsoft Windows [Version 10.0.19042.1202]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\nemma>cd desktop
+
+C:\Users\nemma\Desktop>python -m django --version
+2.2
+
+C:\Users\nemma\Desktop>cd virtualenvironment
+
+C:\Users\nemma\Desktop\virtualenvironment>cd Django_2.0.7_to_3.2.7
+
+C:\Users\nemma\Desktop\virtualenvironment\Django_2.0.7_to_3.2.7>cd Scripts
+
+C:\Users\nemma\Desktop\virtualenvironment\Django_2.0.7_to_3.2.7\Scripts>activate
+
+(virtualenvironment) C:\Users\nemma\Desktop\virtualenvironment\Django_2.0.7_to_3.2.7\Scripts>cd..
+
+(virtualenvironment) C:\Users\nemma\Desktop\virtualenvironment\Django_2.0.7_to_3.2.7>cd..
+
+(virtualenvironment) C:\Users\nemma\Desktop\virtualenvironment>cd..
+
+(virtualenvironment) C:\Users\nemma\Desktop>cd Learn-Django
+
+(virtualenvironment) C:\Users\nemma\Desktop\Learn-Django>cd project-1
+
+(virtualenvironment) C:\Users\nemma\Desktop\Learn-Django\project-1>django-admin startproject employeer
+
+(virtualenvironment) C:\Users\nemma\Desktop\Learn-Django\project-1>cd employeer
+
+(virtualenvironment) C:\Users\nemma\Desktop\Learn-Django\project-1\employeer>python manage.py startapp employee
+
+(virtualenvironment) C:\Users\nemma\Desktop\Learn-Django\project-1\employeer>python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 17 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+September 14, 2021 - 09:59:10
+Django version 2.2, using settings 'employeer.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+(virtualenvironment) C:\Users\nemma\Desktop\Learn-Django\project-1\employeer>
+(virtualenvironment) C:\Users\nemma\Desktop\Learn-Django\project-1\employeer>
