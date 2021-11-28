@@ -1,0 +1,29 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+<div class="container" >
+    <h1>AuthorForm Details</h1>
+        <table class="table table-success table-striped">
+            <thead>
+                <tr>
+                    <td>Author_Name</td>
+                    <td>Email</td>
+                    <td>Start_date</td>
+                    <td>Edit_Author_Details</td>
+                    <td>Delete_Author_details</td>
+                </tr>
+                <tbody>
+                    {% for author in Data  %}
+                    <tr>
+                        <td><a href="{{ author.get_absolute_url }}"></a>{{ author.name }}</td>
+                        <td>{{ author.email }}</td>
+                        <td>{{ author.st_date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </thead>         
+        </table>
+</div>
+{% endblock %}

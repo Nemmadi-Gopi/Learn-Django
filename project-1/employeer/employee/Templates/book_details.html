@@ -1,0 +1,35 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+<div class="container" >
+    <h1>BookForm Details</h1>
+        <table class="table table-success table-striped">
+            <thead>
+                <tr>
+                  
+                    <td>Book_name</td>
+                    <td>Author_name</td>
+                    <td>Pages</td>
+                    <td>Price</td>
+                    <td>Release_date</td>
+                    <td>Edit_Book_Details</td>
+                    <td>Delete_Book_details</td>
+
+                </tr>
+                <tbody>
+                    {% for book in Data  %}
+                    <tr>
+                        <td><a href="{{ book.get_absolute_url }}"></a>{{ book.B_name }}</td>
+                        <td>{{ book.author }}</td>
+                        <td>{{ book.pages }}</td>
+                        <td>{{ book.price }}</td>
+                        <td>{{ book.release_date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </thead>         
+        </table>
+</div>
+{% endblock %}

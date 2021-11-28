@@ -1,0 +1,31 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+<div class="container" >
+    <h1>PublisherForm Details</h1>
+        <table class="table table-success table-striped">
+            <thead>
+                <tr>
+                    <td>Publisher_name</td>
+                    <td>Author_name</td>
+                    <td>Address</td>
+                    <td>Pub_date</td>
+                    <td>Edit_publisher_Details</td>
+                    <td>Delete_publisher_details</td>
+                </tr>
+                <tbody>
+                    {% for publisher in Data  %}
+                    <tr>
+                        <td><a href="{{ publisher.get_absolute_url }}"></a>{{ publisher.name }}</td>
+                        <td>{{ publisher.author }}</td>
+                        <td>{{ publisher.address }}</td>
+                        <td>{{ publisher.pub_date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </thead>         
+        </table>
+</div>
+{% endblock %}
