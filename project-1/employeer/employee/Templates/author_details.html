@@ -16,14 +16,17 @@
                 <tbody>
                     {% for author in Data  %}
                     <tr>
-                        <td><a href="{{ author.get_absolute_url }}"></a>{{ author.name }}</td>
+                        <td><a href="{% url 'authors_list'  %}"></a>{{ author.name }}</td>
                         <td>{{ author.email }}</td>
                         <td>{{ author.st_date }}</td>
+                        <td><a href="{% url 'edit_author' author.id %}" class="btn btn-sm btn-info">Edit</a>{{ author.Edit_Author_Details }}</td>
+                        <td><a  href="{% url 'delete_author' author.id %}" class="btn btn-danger">Delete</a>{{ author.Delete_Author_Details }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
 
             </thead>         
         </table>
+        <a href="{% url 'add-author' %}" class='btn btn-primary'>Add Author</a>
 </div>
 {% endblock %}

@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.forms import fields
 from employee import models
-from employee.models import User, AuthorModel
+from employee.models import BookModel, User, AuthorModel, publishermodel
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
 
@@ -71,3 +71,17 @@ class AuthorForm(forms.ModelForm):
     class Meta:
         model = AuthorModel
         fields = '__all__'
+
+
+class BookForm(forms.ModelForm):
+
+    class Meta:
+        model = BookModel
+        fields = "__all__"
+
+class PublisherForm(forms. ModelForm):
+
+    class Meta:
+        model = publishermodel
+        fields = "__all__"
+

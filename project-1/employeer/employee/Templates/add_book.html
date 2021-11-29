@@ -1,16 +1,18 @@
 {% extends "home.html" %}
 
 {% block content %}
-<div class="container">
-    <h1>signup page</h1>
+
+<div class="container" >
+    <h1>Add BookForm</h1>
+    <br>
+
     <form action="" method="post">
+
         {% csrf_token %}
         {{form.as_p}}
-        <input type="submit" value="submit">
+
+        <button class="btn btn-primary" type="submit">Add Book</button>
+
     </form>
-
-
 </div>
-
-
 {% endblock %}

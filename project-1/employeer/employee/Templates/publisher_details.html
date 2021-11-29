@@ -21,11 +21,16 @@
                         <td>{{ publisher.author }}</td>
                         <td>{{ publisher.address }}</td>
                         <td>{{ publisher.pub_date }}</td>
+                        <td><a href="{% url 'edit_publisher' publisher.id %}" class="btn btn-sm btn-info">Edit</a>{{ publisher.Edit_publisher_Details }}</td>
+                        <td><a  href="{% url 'delete_publisher' publisher.id %}" class="btn btn-danger">Delete</a>{{ publisher.Delete_publisher_Details }}</td>
+
                     </tr>
                     {% endfor %}
                 </tbody>
 
             </thead>         
         </table>
+        <br>
+        <a href="{% url 'add-publisher' %}" class='btn btn-primary'>Add Publisher</a>
 </div>
 {% endblock %}
