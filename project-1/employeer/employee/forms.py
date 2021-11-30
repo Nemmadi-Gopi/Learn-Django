@@ -64,7 +64,8 @@ class AdminUserChangeForm(forms.ModelForm):
 
 class Loginform(forms.Form):
     email = forms.EmailField(max_length = 255)
-    passcode = forms.CharField(max_length=60)
+    password = forms.CharField()
+    # widget = forms.PasswordInput()
 
 class AuthorForm(forms.ModelForm):
     
